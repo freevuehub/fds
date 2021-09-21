@@ -1,6 +1,6 @@
 {
   "name": "@freevuehub/fds",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
   "main": "lib/index.js",
   "dependencies": {
@@ -21,7 +21,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "rm -rf ./lib && tsc",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "babel": {
     "presets": [
@@ -48,7 +50,13 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
-    "@babel/preset-react": "^7.14.5"
+    "@babel/preset-react": "^7.14.5",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/node-logger": "^6.3.8",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.8"
   },
   "author": {
     "name": "freevuehub",
