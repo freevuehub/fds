@@ -2,8 +2,9 @@
   "name": "@freevuehub/fds",
   "version": "0.0.4",
   "private": false,
+  "main": "lib/index.js",
   "dependencies": {
-    "@freevuehub/fds": "^0.0.3",
+    "@freevuehub/fds": "^0.0.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -19,10 +20,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf ./dist && tsc",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "pb": "yarn build && yarn publish"
+    "build": "rm -rf ./lib && tsc",
+    "test": "react-scripts test"
   },
   "babel": {
     "presets": [
@@ -50,5 +49,11 @@
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/preset-react": "^7.14.5"
-  }
+  },
+  "author": {
+    "name": "freevuehub",
+    "email": "hackish113@gmail.com",
+    "url": "https://freevue.dev"
+  },
+  "license": "ISC"
 }
