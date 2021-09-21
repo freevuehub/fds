@@ -1,9 +1,9 @@
 {
   "name": "@freevuehub/fds",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "dependencies": {
-    "@freevuehub/fds": "^0.0.2",
+    "@freevuehub/fds": "^0.0.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -19,11 +19,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf ./dist && tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "copy": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files",
-    "pb": "yarn copy && yarn publish"
+    "pb": "yarn build && yarn publish"
   },
   "babel": {
     "presets": [
