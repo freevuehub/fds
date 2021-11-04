@@ -1,6 +1,6 @@
 {
   "name": "@freevuehub/fds",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Freevuehub Design System",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
