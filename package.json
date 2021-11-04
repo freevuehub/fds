@@ -1,6 +1,6 @@
 {
   "name": "@freevuehub/fds",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "",
   "main": "./dist/index.js",
   "types": "./index.d.ts",
@@ -20,12 +20,14 @@
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
     "@emotion/react": "^11.5.0",
     "babel-loader": "^8.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.3.0",
     "@freevuehub/fds": "^0.0.6",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
