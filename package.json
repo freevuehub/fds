@@ -1,12 +1,14 @@
 {
   "name": "@freevuehub/fds",
-  "version": "0.0.10",
-  "description": "",
+  "version": "0.0.18",
+  "description": "Freevuehub Design System",
   "main": "./dist/index.js",
-  "types": "./index.d.ts",
+  "types": "./dist/index.d.ts",
+  "private": false,
   "scripts": {
-    "build": "tsc",
-    "pub": "npm publish",
+    "babel": "rm -rf ./dist && babel lib -d dist --copy-files",
+    "build": "rm -rf ./lib && tsc && yarn babel",
+    "prepare": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -14,8 +16,14 @@
   "keywords": [
     "react",
     "freevue",
-    "design"
+    "design",
+    "ui",
+    "components"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freevuehub/fds.git"
+  },
   "author": "freevue",
   "license": "MIT",
   "dependencies": {
@@ -40,5 +48,17 @@
     "typescript": "^4.4.4",
     "webpack": "^5.61.0",
     "webpack-cli": "^4.9.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
