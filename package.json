@@ -1,12 +1,11 @@
 {
   "name": "@freevuehub/fds",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "Freevuehub Design System",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "private": false,
   "scripts": {
-    "babel": "rm -rf ./dist && babel lib -d dist --copy-files",
     "build": "rm -rf ./lib && tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
