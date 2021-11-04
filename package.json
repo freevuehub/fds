@@ -1,6 +1,6 @@
 {
   "name": "@freevuehub/fds",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Freevuehub Design System",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -8,7 +8,6 @@
   "scripts": {
     "babel": "rm -rf ./dist && babel lib -d dist --copy-files",
     "build": "rm -rf ./lib && tsc && yarn babel",
-    "prepare": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -60,5 +59,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "type": "module"
 }
