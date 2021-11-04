@@ -1,8 +1,9 @@
 {
   "name": "@freevuehub/fds",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "main": "./dist/index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "demo": "webpack-dev-server --mode development",
     "build": "rm -rf ./dist && tsc",
@@ -20,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@emotion/react": "^11.5.0",
     "babel-loader": "^8.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
