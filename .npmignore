@@ -8,3 +8,10 @@ tsconfig.json
 
 # GIT
 .git
+
+src
+demo
+.babelrc
+
+.idea
+.storybook
