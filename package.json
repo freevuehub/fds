@@ -1,12 +1,11 @@
 {
   "name": "@freevuehub/fds",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "",
   "main": "./dist/index.js",
   "types": "./index.d.ts",
   "scripts": {
-    "demo": "webpack-dev-server --mode development",
-    "build": "rm -rf ./dist && tsc",
+    "build": "tsc",
     "pub": "npm publish",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
