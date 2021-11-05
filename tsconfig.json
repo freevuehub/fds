@@ -1,18 +1,26 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
     "sourceMap": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
     "outDir": "./dist",
-    "jsx": "preserve",
-    "jsxImportSource": "@emotion/react",
-    "module": "CommonJS",
-    "target": "ESNext",
+    "jsx": "react",
     "declaration": true,
     "strict": true,
-    "typeRoots": ["index.d.ts", "node_modules/@types"]
+    "strictNullChecks": true,
+    "removeComments": true,
+    "typeRoots": ["index.d.ts", "node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    }
   },
   "include": [
+    "./src/**/*.tsx",
     "./src/**/*.ts"
   ],
   "exclude": [
