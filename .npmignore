@@ -15,3 +15,6 @@ demo
 
 .idea
 .storybook
+
+jest.config.json
+rollup.config.json

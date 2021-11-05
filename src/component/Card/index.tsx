@@ -1,21 +1,28 @@
 import React from 'react'
-import styled from '@emotion/styled'
-import { Image } from '~/component'
+import { css, Theme } from '@emotion/react'
+import { Image } from '../'
 
 export interface IProps {
   className?: string
   onClick?: Function
   cover?: string
   border?: boolean
+  title?: string
 }
 
-const Wrap = styled.div`
+const BorderCss = (theme: Theme) => css`
+  box-shadow: none;
+  border: 1px solid ${theme.color.primary};
+`
+const WrapCss = (props: IProps) => (theme: Theme) => css`
   overflow: hidden;
   border-radius: 15px;
   background-color: #fff;
   box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
+  
+  ${props.border && BorderCss(theme)}
 `
-const Content = styled.div`
+const ContentCss = css`
   padding: 20px;
 `
 const Card: React.FC<IProps> = (props) => {
@@ -24,21 +31,28 @@ const Card: React.FC<IProps> = (props) => {
   }
 
   return (
-    <Wrap className={props.className || ''} onClick={onClick}>
+    <div
+      css={WrapCss(props)}
+      className={props.className || ''}
+      onClick={onClick}
+    >
       {props.cover && <Image src={props.cover} />}
       {
         props.children && (
-          <Content>
+          <div css={ContentCss}>
             {props.children}
-          </Content>
+          </div>
         )
       }
-    </Wrap>
+    </div>
   )
 }
 
 Card.defaultProps = {
-  border: false
+  border: false,
+  title: '',
+  cover: '',
+  className: '',
 }
 
 export default Card

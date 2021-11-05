@@ -31,6 +31,13 @@ module.exports = {
         'emotion-theming': resolvePath('node_modules/@emotion/react'),
       },
     }
+    config.module.rules.push({
+      test: /\.(ts|tsx)$/,
+      loader: require.resolve('babel-loader'),
+      options: {
+        presets: [require.resolve('@emotion/babel-preset-css-prop')],
+      },
+    })
 
     return config
   }
