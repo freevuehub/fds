@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from '@emotion/styled'
 
-interface  IProps {
+export interface IProps {
   src: string
   alt?: string
   className?: string

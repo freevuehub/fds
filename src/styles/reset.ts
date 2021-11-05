@@ -1,6 +1,6 @@
-import { css } from '@emotion/react'
+import { css, Theme } from '@emotion/react'
 
-export default css`
+export default (theme: Theme) => css`
   * {
     margin: 0;
     padding: 0;
@@ -11,5 +11,37 @@ export default css`
   a {
     text-decoration: none;
     color: inherit;
+  }
+  html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    font-family: 'nanumsquare', 'GmarketSans';
+    font-weight: 400;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    color: ${theme.color.text};
+  }
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: ${theme.color.text};
+  }
+  table {
+    border-collapse: collapse;
+  }
+  code {
+    font-family: 'D2Coding';
+    background-color: ${theme.color.content}50;
+    color: ${theme.color.text};
+    padding: 2px 4px;
+  }
+  button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
   }
 `

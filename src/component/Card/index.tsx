@@ -12,18 +12,18 @@ export interface IProps {
 
 const BorderCss = (theme: Theme) => css`
   box-shadow: none;
-  border: 1px solid ${theme.color.primary};
+  border: 1px solid ${theme.common.primary};
 `
 const WrapCss = (props: IProps) => (theme: Theme) => css`
   overflow: hidden;
   border-radius: 15px;
   background-color: #fff;
-  box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
+  box-shadow: ${theme.style.shadow};
+  .card--title {
+  
+  }
   
   ${props.border && BorderCss(theme)}
-`
-const ContentCss = css`
-  padding: 20px;
 `
 const Card: React.FC<IProps> = (props) => {
   const onClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -38,8 +38,13 @@ const Card: React.FC<IProps> = (props) => {
     >
       {props.cover && <Image src={props.cover} />}
       {
+        props.title && (
+          <h3 className="card--title pl-5 pr-5 pt-5">{props.title}</h3>
+        )
+      }
+      {
         props.children && (
-          <div css={ContentCss}>
+          <div className="pa-5">
             {props.children}
           </div>
         )

@@ -1,37 +1,49 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0'
+import { Sheet } from '../'
 
-import Card, { IProps } from './index';
+import Component, { IProps } from './index';
 
 export default {
-  title: 'UI/Card',
-  component: Card,
+  title: 'Component/UI/Card',
+  component: Component,
   decorators: [
     (Story) => (
-      <div style={{ width: 300 }}>
-        <Story />
-      </div>
+      <Story />
     )
   ],
-  argTypes: {
-    color: { control: 'color' },
-    border: { control: 'boolean' },
-  },
-  args: {
-    border: false,
-    color: '#6bb3b8'
-  },
 } as Meta
 
-const Template: Story<IProps>  = (args) => <Card {...args}>Hello World</Card>
-
-export const Default = Template.bind({})
-export const Border = Template.bind({})
-export const Cover = Template.bind({})
-
-Border.args = {
-  border: true,
+const Default: Story<IProps> = (args) => (
+  <Component {...args}>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Accusantium alias architecto aspernatur atque autem culpa ea
+      expedita facere harum incidunt ipsum magnam minus odio, perferendis,
+      praesentium reiciendis repellendus sequi voluptas?
+    </p>
+  </Component>
+)
+const Template: Story<IProps> = () => {
+  return (
+    <>
+      <h2>Default</h2>
+      <Sheet width={400} className="mt-2 mb-5">
+        <h4>Only Content</h4>
+        <Default className="mt-2 mb-5" />
+        <h4>With Title</h4>
+        <Default title="Hello World" className="mt-2" />
+      </Sheet>
+      <h2>Border</h2>
+      <Sheet width={400} className="mt-2 mb-5">
+        <Default border />
+      </Sheet>
+      <h2>Cover Image</h2>
+      <Sheet width={400} className="mt-2 mb-5">
+        <Default cover="https://cdn.pixabay.com/photo/2017/08/01/00/44/laptop-2562361_1280.jpg" />
+      </Sheet>
+    </>
+  )
 }
-Cover.args = {
-  cover: 'https://cdn.pixabay.com/photo/2017/08/01/00/44/laptop-2562361_1280.jpg'
-}
+
+export const Card = Template.bind({})

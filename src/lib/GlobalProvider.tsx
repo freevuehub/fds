@@ -1,11 +1,11 @@
 import React from 'react'
 import { Global } from '@emotion/react'
-import { reset } from '~/styles'
+import { font, reset, common } from '~/styles'
 
 const GlobalProvider: React.FC = (props) => {
   return (
     <>
-      <Global styles={[reset]} />
+      <Global styles={[font, reset, common]} />
       {props.children}
     </>
   )
