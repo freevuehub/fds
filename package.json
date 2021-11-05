@@ -7,7 +7,6 @@
   "private": false,
   "scripts": {
     "build": "rm -rf ./dist && yarn rollup -c && tsc --emitDeclarationOnly",
-    "prepare": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
