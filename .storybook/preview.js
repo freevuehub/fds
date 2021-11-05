@@ -1,10 +1,12 @@
-import { ThemeProvider, Global } from '@emotion/react'
+import { ThemeProvider } from '@emotion/react'
+import { GlobalProvider } from '~/lib'
 
 export const decorators = [
   Story => (
     <ThemeProvider theme={{}}>
-      <Global styles={[]} />
-      <Story />
+      <GlobalProvider>
+        <Story />
+      </GlobalProvider>
     </ThemeProvider>
   ),
 ]

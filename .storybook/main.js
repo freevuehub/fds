@@ -25,17 +25,12 @@ module.exports = {
       ...config.resolve,
       alias: {
         ...config.resolve.alias,
+        '~': path.resolve(__dirname, '../src'),
         '@emotion/core': resolvePath('node_modules/@emotion/react'),
+        '@emotion/styled': resolvePath('node_modules/@emotion/styled'),
         'emotion-theming': resolvePath('node_modules/@emotion/react'),
       },
     }
-    config.module.rules.push({
-      test: /\.(ts|tsx)$/,
-      loader: require.resolve('babel-loader'),
-      options: {
-        presets: [require.resolve('@emotion/babel-preset-css-prop')],
-      },
-    })
 
     return config
   }
