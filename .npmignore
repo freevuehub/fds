@@ -18,3 +18,5 @@ demo
 
 jest.config.json
 rollup.config.json
+
+Dockerfile
