@@ -5,12 +5,13 @@ export interface IProps {
   width?: number
   height?: number
   className?: string
+  color?: string
 }
 
 const WrapCss = (props: IProps) => (theme: Theme) => css`
   width: ${props.width ? `${props.width}px` : 'auto'};
   height: ${props.height ? `${props.height}px` : 'auto'};
-  background-color: ${theme.common.black}15;
+  background-color: ${props.color || theme.common.grey};
 `
 const Sheet: React.FC<IProps> = (props) => {
   return (

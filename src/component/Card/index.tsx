@@ -39,12 +39,12 @@ const Card: React.FC<IProps> = (props) => {
       {props.cover && <Image src={props.cover} />}
       {
         props.title && (
-          <h3 className="card--title pl-5 pr-5 pt-5">{props.title}</h3>
+          <h5 className="card--title pl-2 pr-2 pt-2">{props.title}</h5>
         )
       }
       {
         props.children && (
-          <div className="pa-5">
+          <div className="pa-2">
             {props.children}
           </div>
         )
