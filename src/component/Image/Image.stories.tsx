@@ -1,14 +1,16 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-
-import ImageComponent, { IProps } from './index';
+import Component, { IProps } from './index';
+import { Divider } from '../'
 
 export default {
   title: 'Component/UI/Image',
-  component: ImageComponent,
+  component: Component,
   decorators: [
     (Story) => (
       <div style={{ width: 300 }}>
+        <h1 className="mb-5">Image</h1>
+        <Divider className="mb-5" />
         <Story />
       </div>
     )
@@ -21,6 +23,6 @@ export default {
   },
 } as Meta
 
-const Template: Story<IProps>  = (args) => <ImageComponent {...args} />
+const Template: Story<IProps>  = (args) => <Component {...args} />
 
 export const Image = Template.bind({})
