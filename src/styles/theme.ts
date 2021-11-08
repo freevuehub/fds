@@ -30,6 +30,7 @@ const theme: Theme = {
     primary: '#6bb3b8',
     white: '#ffffff',
     black: '#000000',
+    grey: '#eaeaea',
   },
   color: {
     ...light,
