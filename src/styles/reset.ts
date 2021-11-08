@@ -16,7 +16,7 @@ export default (theme: Theme) => css`
     height: 100%;
     width: 100%;
     font-size: 14px;
-    font-family: 'nanumsquare', 'GmarketSans';
+    font-family: 'nanumsquare';
     font-weight: 400;
   }
   h1, h2, h3, h4, h5, h6 {
@@ -24,11 +24,18 @@ export default (theme: Theme) => css`
     font-weight: 700;
     color: ${theme.color.text};
   }
+  ${[1, 2, 3, 4, 5, 6].map((item) => `
+    h${item} {
+      font-size: ${64 - (item * 8)}px;
+      line-height: ${64 - ((item - 1) * 8)}px;
+    }
+  `)}
   p {
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
     color: ${theme.color.text};
+    font-family: 'nanumsquare';
   }
   table {
     border-collapse: collapse;

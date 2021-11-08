@@ -1,17 +1,23 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { Sheet } from './'
+import { Sheet, Divider } from './'
 
 export default {
   title: 'Component/UI/Typography',
   decorators: [
-    (Story) => <Story />
+    (Story) => (
+      <>
+        <h1 className="mb-5">Typography</h1>
+        <Divider className="mb-5" />
+        <Story />
+      </>
+    )
   ],
 } as Meta
 
 const Template: Story  = () => (
   <>
-    <h2>Title</h2>
+    <h3>Heading</h3>
     <Sheet className="mt-2 mb-5">
       <h1 className="mb-3">Hello World. (h1)</h1>
       <h2 className="mb-3">Hello World. (h2)</h2>
@@ -20,7 +26,7 @@ const Template: Story  = () => (
       <h5 className="mb-3">Hello World. (h5)</h5>
       <h6>Hello World. (h6)</h6>
     </Sheet>
-    <h2>Text</h2>
+    <h3>Text</h3>
     <Sheet className="mt-2 mb-5">
       <div className="mb-3">
         <p>Hello World. (Default)</p>
