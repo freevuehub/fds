@@ -1,16 +1,13 @@
-import { ThemeProvider, GlobalProvider } from '~/lib'
+import { Style } from '~/component'
 
 export const decorators = [
   Story => (
-    <ThemeProvider>
-      <GlobalProvider>
-        <Story />
-      </GlobalProvider>
-    </ThemeProvider>
+    <Style>
+      <Story />
+    </Style>
   ),
 ]
 
 export const parameters = {
-  layout: 'centered',
   actions: { argTypesRegex: "^on[A-Z].*" },
 }
