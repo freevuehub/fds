@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { css, Theme } from '@emotion/react'
 
 export interface IProps {
@@ -55,12 +55,10 @@ const Switch: React.FC<IProps> = (props) => {
   const [checked, setChecked] = useState<boolean>(!!props.value)
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked)
-  }
+    setChecked(!checked)
 
-  useEffect(() => {
-    props.onChange(checked)
-  }, [checked])
+    props.onChange?.(event)
+  }
 
   return (
     <label css={WrapCss} className={`${checked ? 'on' : ''} d-flex`}>
