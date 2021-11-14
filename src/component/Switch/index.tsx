@@ -2,13 +2,12 @@ import React, { useState } from 'react'
 import { css, Theme } from '@emotion/react'
 
 export interface IProps {
-  onChange: Function
+  onChange?: Function
   value?: boolean
   label?: string
 }
 
 const WrapCss = (theme: Theme) => css`
-  background-color: ${theme.color.content};
   color: ${theme.color.text};
   font-size: 14px;
   cursor: pointer;
