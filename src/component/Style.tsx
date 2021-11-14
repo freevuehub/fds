@@ -1,12 +1,9 @@
 import React from 'react'
-import { ThemeProvider, Global } from '@emotion/react'
-import { font, reset, common } from '~/styles'
-import { theme } from '~/styles'
+import { ThemeProvider } from '~/provider'
 
 const Style: React.FC = (props) => {
   return (
-    <ThemeProvider theme={theme}>
-      <Global styles={[font, reset, common]} />
+    <ThemeProvider>
       {props.children}
     </ThemeProvider>
   )

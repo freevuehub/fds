@@ -26,8 +26,8 @@ export default (theme: Theme) => css`
   }
   ${[1, 2, 3, 4, 5, 6].map((item) => `
     h${item} {
-      font-size: ${64 - (item * 8)}px;
-      line-height: ${64 - ((item - 1) * 8)}px;
+      font-size: ${64 - (item * 10)}px;
+      line-height: ${64 - ((item - 1) * 10)}px;
     }
   `)}
   p {
