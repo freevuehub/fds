@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react'
 import Component, { IProps } from '.'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faTimes, faSpinner } from '../../'
 
 export default {
   title: 'Component/UI/Icon',
@@ -15,6 +15,11 @@ export default {
   ]
 } as Meta
 
-const Template: Story<IProps> = () => <Component icon={faTimes} />
+const Template: Story<IProps> = () => (
+  <>
+    <Component icon={faTimes} />
+    <Component icon={faSpinner} />
+  </>
+)
 
 export const Icon = Template.bind({})

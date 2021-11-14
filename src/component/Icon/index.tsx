@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from '@emotion/react'
 import { FontAwesomeIcon  } from '@fortawesome/react-fontawesome'
 
-interface IProps {
+export interface IProps {
   icon: any
   className?: string
 }

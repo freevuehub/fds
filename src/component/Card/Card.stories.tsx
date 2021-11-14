@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0'
 import Component, { IProps } from '.';
-import { Divider, Sheet } from '../'
+import {Divider, Sheet, Switch} from '../'
+import { useThemeMode } from '~/hooks'
 
 export default {
   title: 'Component/UI/Card',
@@ -28,13 +29,20 @@ const Default: Story<IProps> = (args) => (
   </Component>
 )
 const Template: Story<IProps> = () => {
+  const [mode, setMode] = useThemeMode()
+
+  const onChange = () => {
+    setMode()
+  }
+
   return (
     <>
+      <Switch onChange={onChange} value={mode === 'dark'} />
       <h3>Default</h3>
       <Sheet width={400} className="mt-2 mb-5">
-        <h5>Only Content</h5>
+        <h4>Only Content</h4>
         <Default className="mt-2 mb-5" />
-        <h5>With Title</h5>
+        <h4>With Title</h4>
         <Default title="Hello World" className="mt-2" />
       </Sheet>
       <h3>Border</h3>
