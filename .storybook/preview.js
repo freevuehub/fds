@@ -1,11 +1,16 @@
+import React from 'react'
 import { Style } from '~/component'
 
 export const decorators = [
-  Story => (
-    <Style>
-      <Story />
-    </Style>
-  ),
+  (Story) => {
+    return (
+      <Style>
+        <div className="pa-5">
+          <Story />
+        </div>
+      </Style>
+    )
+  },
 ]
 
 export const parameters = {

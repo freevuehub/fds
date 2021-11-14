@@ -17,6 +17,12 @@ export default {
   ],
 } as Meta
 
-const Template: Story<IProps>  = (args) => <Component {...args} />
+const Template: Story<IProps>  = (props) => {
+  return (
+    <>
+      <Component {...props} />
+    </>
+  )
+}
 
 export const Switch = Template.bind({})
