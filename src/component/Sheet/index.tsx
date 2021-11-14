@@ -11,7 +11,7 @@ export interface IProps {
 const WrapCss = (props: IProps) => (theme: Theme) => css`
   width: ${props.width ? `${props.width}px` : 'auto'};
   height: ${props.height ? `${props.height}px` : 'auto'};
-  background-color: ${props.color || theme.common.grey};
+  background-color: ${props.color || theme.color.content}30;
 `
 const Sheet: React.FC<IProps> = (props) => {
   return (

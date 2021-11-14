@@ -17,7 +17,7 @@ const BorderCss = (theme: Theme) => css`
 const WrapCss = (props: IProps) => (theme: Theme) => css`
   overflow: hidden;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: ${theme.color.content};
   box-shadow: ${theme.style.shadow};
   .card--title {
   
@@ -39,7 +39,7 @@ const Card: React.FC<IProps> = (props) => {
       {props.cover && <Image src={props.cover} />}
       {
         props.title && (
-          <h5 className="card--title pl-2 pr-2 pt-2">{props.title}</h5>
+          <h4 className="card--title pl-2 pr-2 pt-2">{props.title}</h4>
         )
       }
       {
