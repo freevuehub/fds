@@ -1,21 +1,12 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0'
 import Component, { IProps } from '.';
-import {Divider, Sheet, Switch} from '../'
+import { Sheet, Switch } from '../'
 import { useThemeMode } from '~/hooks'
 
 export default {
   title: 'Component/UI/Card',
   component: Component,
-  decorators: [
-    (Story) => (
-      <>
-        <h1 className="mb-5">Card</h1>
-        <Divider className="mb-5" />
-        <Story />
-      </>
-    )
-  ],
 } as Meta
 
 const Default: Story<IProps> = (args) => (
@@ -39,19 +30,33 @@ const Template: Story<IProps> = () => {
     <>
       <Switch onChange={onChange} value={mode === 'dark'} />
       <h3>Default</h3>
-      <Sheet width={400} className="mt-2 mb-5">
-        <h4>Only Content</h4>
-        <Default className="mt-2 mb-5" />
-        <h4>With Title</h4>
-        <Default title="Hello World" className="mt-2" />
-      </Sheet>
+      <div className="mt-2 mb-5 d-flex">
+        <div className="pa-2">
+          <Default />
+        </div>
+        <div className="pa-2">
+          <Default title="Hello World" />
+        </div>
+      </div>
       <h3>Border</h3>
-      <Sheet width={400} className="mt-2 mb-5">
-        <Default border />
-      </Sheet>
+      <div className="mt-2 mb-5 d-flex">
+        <div className="pa-2">
+          <Default border />
+        </div>
+        <div className="pa-2">
+          <Default border title="Hello World" />
+        </div>
+      </div>
       <h3>Cover Image</h3>
-      <Sheet width={400} className="mt-2 mb-5">
+      <div className="mt-2 mb-5">
         <Default cover="https://cdn.pixabay.com/photo/2017/08/01/00/44/laptop-2562361_1280.jpg" />
+      </div>
+      <h3>Click Event</h3>
+      <Sheet width={400} className="mt-2 mb-5">
+        <Default
+          onClick={() => alert('Hello')}
+          cover="https://cdn.pixabay.com/photo/2017/08/01/00/44/laptop-2562361_1280.jpg"
+        />
       </Sheet>
     </>
   )
