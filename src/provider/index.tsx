@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { ThemeProvider as EmotionThemeProvider, Global } from '@emotion/react'
-import { common, font, reset, theme } from '~/styles'
+import { ThemeProvider as EmotionThemeProvider } from '@emotion/react'
+import { theme } from '~/styles'
 import { TypeThemeMode } from '../'
 
 const initialThemeMode: TypeThemeMode = 'light'
@@ -21,9 +21,9 @@ export const ThemeProvider: React.FC = (props) => {
           common: theme.common,
           color: theme.color[mode],
           style: theme.style,
+          breakPoint: theme.breakPoint,
         }}
       >
-        <Global styles={[font, reset, common]} />
         {props.children}
       </EmotionThemeProvider>
     </ThemeContext.Provider>
