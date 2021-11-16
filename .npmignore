@@ -17,6 +17,6 @@ demo
 .storybook
 
 jest.config.json
-rollup.config.json
+rollup.config.js
 
 Dockerfile
