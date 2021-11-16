@@ -1,0 +1,62 @@
+import React, { useState } from 'react'
+import { css, Theme } from '@emotion/react'
+import { Button } from '../'
+
+export interface IProps {
+  onChange?: Function
+  active?: boolean
+  className?: string
+}
+
+const ButtonCss = (theme: Theme) => css`
+  width: 32px;
+  height: 20px;
+  margin: 30px;
+  z-index: 11;
+  transition: transform .3s;
+  span {
+    transition: transform .3s;
+    background-color: ${theme.color.text};
+    font-size: 0;
+    text-indent: -9999px;
+    height: 3px;
+  }
+  &.on {
+    transform: rotate(-180deg);
+    span {
+      &:nth-of-type(1) {
+        transform: translateY(8.5px) rotate(60deg);
+      }
+      &:nth-of-type(2) {
+        transform: rotate(360deg);
+      }
+      &:nth-of-type(3) {
+        transform: translateY(-8.5px) rotate(-60deg);
+      }
+    }
+  }
+`
+const NavButton: React.FC<IProps> = (props) => {
+  const [active, setActive] = useState<boolean>(!!props.active)
+
+  const onNavButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+
+    props.onChange?.(!active)
+    setActive(!active)
+  }
+
+  return (
+    <Button
+      onClick={onNavButtonClick}
+      css={ButtonCss}
+      className={`${active ? 'on' : ''} ${props.className || ''} d-flex dir-column flex-wrap jc-space-between`}
+    >
+      <span className="fill width">line1</span>
+      <span className="fill width">line2</span>
+      <span className="fill width">line3</span>
+    </Button>
+  )
+}
+
+export default NavButton
