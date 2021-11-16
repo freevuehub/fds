@@ -19,11 +19,13 @@ const WrapCss = (props: IProps) => (theme: Theme) => css`
   border-radius: 15px;
   background-color: ${theme.color.content};
   box-shadow: ${theme.style.shadow};
+  transition: background-color .3s;
   .card--title {
   
   }
   
   ${props.border && BorderCss(theme)}
+  ${props.onClick && `cursor: pointer;`}
 `
 const Card: React.FC<IProps> = (props) => {
   const onClick = (event: React.MouseEvent<HTMLDivElement>) => {
