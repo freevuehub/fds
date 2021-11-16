@@ -23,6 +23,7 @@ export default (theme: Theme) => css`
     font-family: 'GmarketSans';
     font-weight: 700;
     color: ${theme.color.text};
+    transition: color .3s;
   }
   ${[1, 2, 3, 4, 5, 6].map((item) => `
     h${item} {
@@ -36,6 +37,7 @@ export default (theme: Theme) => css`
     line-height: 18px;
     color: ${theme.color.text};
     font-family: 'nanumsquare';
+    transition: color .3s;
   }
   table {
     border-collapse: collapse;

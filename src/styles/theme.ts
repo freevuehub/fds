@@ -32,6 +32,15 @@ export const style = {
   shadow: `4px 12px 30px 6px rgb(0 0 0 / 9%)`
 }
 
+export const breakPoint = {
+  notebook: 1460,
+  ipadPro: 1160,
+  ipad: 980,
+  foldInner: 800,
+  mobile: 640,
+  foldFront: 360
+}
+
 export default {
   color: {
     light,
@@ -39,4 +48,5 @@ export default {
   },
   common,
   style,
+  breakPoint,
 }

@@ -1,6 +1,10 @@
 import { css } from '@emotion/react'
 
 const diff = [0, 1, 2, 3, 4, 5]
+const itemsRange = ['center', 'flex-start', 'flex-end']
+const contentRange = ['center', 'space-around', 'space-between']
+const directions = ['column', 'row']
+const overflow = ['hidden', 'auto', 'scroll']
 
 export default css`
   .fill {
@@ -11,6 +15,30 @@ export default css`
   .d-flex {
     display: flex;
   }
+  
+  .flex-1 {
+    flex: 1;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  ${overflow.map((item) => `
+    .x-${item} { overflow-x: ${item}; }
+    .y-${item} { overflow-y: ${item}; }
+  `)}
+  ${directions.map((item) => `
+    .dir-${item} { flex-direction: ${item}; }
+  `)}
+  ${itemsRange.map((item) => `
+    .ji-${item} { justify-items: ${item}; }
+    .ai-${item} { align-items: ${item}; }
+  `)}
+  ${contentRange.map((item) => `
+    .jc-${item} { justify-content: ${item}; }
+    .ac-${item} { align-content: ${item}; }
+  `)}
   
   ${diff.map((item: number) => `
     .mt-${item} { margin-top: ${item * 5}px; }
