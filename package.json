@@ -1,6 +1,6 @@
 {
   "name": "@freevuehub/fds",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Freevuehub Design System",
   "main": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
@@ -25,9 +25,6 @@
   "author": "freevue",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.16.0",
-    "@emotion/react": "^11.5.0",
-    "@emotion/styled": "^11.3.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -35,9 +32,12 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
     "@emotion/babel-plugin": "^11.3.0",
     "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
     "@freevuehub/fds": "^0.0.6",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
