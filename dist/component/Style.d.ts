@@ -1,3 +1,6 @@
 import React from 'react';
-declare const Style: React.FC;
+interface IProps {
+    styles?: any[];
+}
+declare const Style: React.FC<IProps>;
 export default Style;

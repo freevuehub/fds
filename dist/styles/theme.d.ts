@@ -29,6 +29,14 @@ export declare const common: {
 export declare const style: {
     shadow: string;
 };
+export declare const breakPoint: {
+    notebook: number;
+    ipadPro: number;
+    ipad: number;
+    foldInner: number;
+    mobile: number;
+    foldFront: number;
+};
 declare const _default: {
     color: {
         light: {
@@ -62,6 +70,14 @@ declare const _default: {
     };
     style: {
         shadow: string;
+    };
+    breakPoint: {
+        notebook: number;
+        ipadPro: number;
+        ipad: number;
+        foldInner: number;
+        mobile: number;
+        foldFront: number;
     };
 };
 export default _default;
