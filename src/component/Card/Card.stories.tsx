@@ -1,11 +1,18 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0'
 import Card from '.'
-import { Image } from '../'
+import { Sheet, Image } from '../'
 
 export default {
   title: 'Component/UI/Card',
   component: Card,
+  decorators: [
+    (Story) => (
+      <Sheet width={400} className="ml-auto mr-auto">
+        <Story />
+      </Sheet>
+    )
+  ]
 } as Meta
 
 export const Default: Story = () => {
