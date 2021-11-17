@@ -12,8 +12,8 @@ export interface IProps {
 
 const WrapCss = (props: IProps) => () => css`
   position: relative;
-  height: ${`${props.height}px` || 'auto'};
-  width: ${`${props.width}px` || 'auto'};
+  height: ${props.height ? `${props.height}px` : 'auto'};
+  width: ${props.width ? `${props.width}px` : 'auto'};
   canvas {
     display: none;
     filter: blur(5px);
