@@ -1,33 +1,37 @@
 import React from 'react'
 import { css, Theme } from '@emotion/react'
-import { Image } from '../'
 
-export interface IProps {
+export interface ICardProps {
   className?: string
   onClick?: Function
-  cover?: string
   border?: boolean
-  title?: string
+}
+export interface ICardTitleProps {
+  className?: string
+  heading?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+}
+export interface ICardContentProps {
+  className?: string
+}
+export interface ICard extends React.FC<ICardProps> {
+  Title: React.FC<ICardTitleProps>
+  Content: React.FC<ICardContentProps>
 }
 
 const BorderCss = (theme: Theme) => css`
   box-shadow: none;
   border: 1px solid ${theme.common.primary};
 `
-const WrapCss = (props: IProps) => (theme: Theme) => css`
-  overflow: hidden;
+const WrapCss = (props: ICardProps) => (theme: Theme) => css`
   border-radius: 15px;
   background-color: ${theme.color.content};
   box-shadow: ${theme.style.shadow};
   transition: background-color .3s;
-  .card--title {
-  
-  }
   
   ${props.border && BorderCss(theme)}
   ${props.onClick && `cursor: pointer;`}
 `
-const Card: React.FC<IProps> = (props) => {
+const Card: ICard = (props) => {
   const onClick = (event: React.MouseEvent<HTMLDivElement>) => {
     props.onClick && props.onClick(event)
   }
@@ -35,31 +39,35 @@ const Card: React.FC<IProps> = (props) => {
   return (
     <div
       css={WrapCss(props)}
-      className={props.className || ''}
+      className={`x-hidden y-hidden ${props.className || ''}`}
       onClick={onClick}
     >
-      {props.cover && <Image src={props.cover} />}
-      {
-        props.title && (
-          <h4 className="card--title pl-2 pr-2 pt-2">{props.title}</h4>
-        )
-      }
-      {
-        props.children && (
-          <div className="pa-2">
-            {props.children}
-          </div>
-        )
-      }
+      {props.children}
     </div>
   )
 }
 
+Card.Title = (props) => {
+  const Heading: React.ReactType = props.heading || 'h4'
+
+  return (
+    <Heading className="pa-2">
+      {props.children}
+    </Heading>
+  )
+}
+Card.Content = (props) => (
+  <div className="pa-2">
+    <p>{props.children}</p>
+  </div>
+)
+
 Card.defaultProps = {
   border: false,
-  title: '',
-  cover: '',
   className: '',
+}
+Card.Title.defaultProps = {
+  heading: 'h4'
 }
 
 export default Card

@@ -1,65 +1,67 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0'
-import Component, { IProps } from '.';
-import { Sheet, Switch } from '../'
-import { useThemeMode } from '~/hooks'
+import Card from '.'
+import { Image } from '../'
 
 export default {
   title: 'Component/UI/Card',
-  component: Component,
+  component: Card,
 } as Meta
 
-const Default: Story<IProps> = (args) => (
-  <Component {...args}>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      Accusantium alias architecto aspernatur atque autem culpa ea
-      expedita facere harum incidunt ipsum magnam minus odio, perferendis,
-      praesentium reiciendis repellendus sequi voluptas?
-    </p>
-  </Component>
-)
-const Template: Story<IProps> = () => {
-  const [mode, setMode] = useThemeMode()
-
-  const onChange = () => {
-    setMode()
-  }
-
+export const Default: Story = () => {
   return (
-    <>
-      <Switch onChange={onChange} value={mode === 'dark'} />
-      <h3>Default</h3>
-      <div className="mt-2 mb-5 d-flex">
-        <div className="pa-2">
-          <Default />
-        </div>
-        <div className="pa-2">
-          <Default title="Hello World" />
-        </div>
-      </div>
-      <h3>Border</h3>
-      <div className="mt-2 mb-5 d-flex">
-        <div className="pa-2">
-          <Default border />
-        </div>
-        <div className="pa-2">
-          <Default border title="Hello World" />
-        </div>
-      </div>
-      <h3>Cover Image</h3>
-      <div className="mt-2 mb-5">
-        <Default cover="https://cdn.pixabay.com/photo/2017/08/01/00/44/laptop-2562361_1280.jpg" />
-      </div>
-      <h3>Click Event</h3>
-      <Sheet width={400} className="mt-2 mb-5">
-        <Default
-          onClick={() => alert('Hello')}
-          cover="https://cdn.pixabay.com/photo/2017/08/01/00/44/laptop-2562361_1280.jpg"
-        />
-      </Sheet>
-    </>
+    <div className="pa-5">
+      <Card>
+        <Card.Title>
+          Hello World
+        </Card.Title>
+        <Card.Content>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Aliquid assumenda, beatae consequuntur distinctio, est id
+          labore molestiae nihil nisi omnis, perferendis perspiciatis
+          quas quasi quia repudiandae similique tenetur velit veritatis!
+        </Card.Content>
+      </Card>
+    </div>
   )
 }
 
-export const Card = Template.bind({})
+export const Border: Story = () => {
+  return (
+    <div className="pa-5">
+      <Card border>
+        <Card.Title>
+          Hello World
+        </Card.Title>
+        <Card.Content>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Aliquid assumenda, beatae consequuntur distinctio, est id
+          labore molestiae nihil nisi omnis, perferendis perspiciatis
+          quas quasi quia repudiandae similique tenetur velit veritatis!
+        </Card.Content>
+      </Card>
+    </div>
+  )
+}
+
+export const CoverImage: Story = () => {
+  return (
+    <div className="pa-5">
+      <Card>
+        <Image
+          src="https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjYzOTIxfQ&w=1280"
+          height={250}
+        />
+        <Card.Title>
+          Hello World
+        </Card.Title>
+        <Card.Content>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Aliquid assumenda, beatae consequuntur distinctio, est id
+          labore molestiae nihil nisi omnis, perferendis perspiciatis
+          quas quasi quia repudiandae similique tenetur velit veritatis!
+        </Card.Content>
+      </Card>
+    </div>
+  )
+}
