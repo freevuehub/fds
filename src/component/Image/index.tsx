@@ -1,21 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react'
-import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 
 export interface IProps {
   src: string
   alt?: string
   className?: string
   onClick?: Function
+  width?: number
+  height?: number
 }
 
-const Wrap = styled.div`
+const WrapCss = (props: IProps) => () => css`
   position: relative;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  height: ${`${props.height}px` || 'auto'};
+  width: ${`${props.width}px` || 'auto'};
   canvas {
     display: none;
     filter: blur(5px);
@@ -28,9 +26,8 @@ const Wrap = styled.div`
     }
   }
 `
-const Canvas = styled.canvas`
+const CanvasCss = css`
   display: block;
-  width: 100%;
   min-height: 100%;
 `
 
@@ -38,7 +35,7 @@ const LazyImage: React.FC<IProps> = (props) => {
   const canvas = useRef<HTMLCanvasElement>(null)
   const [loading, setLoading] = useState<boolean>(true)
   const onImageClick = () => {
-    props.onClick && props.onClick()
+    props.onClick?.()
   }
   const onImageLoad = (event: any) => {
     const { current: $canvas } = canvas
@@ -82,9 +79,13 @@ const LazyImage: React.FC<IProps> = (props) => {
   }, [props.src])
 
   return props.src ? (
-    <Wrap className={`${props.className || ''} ${loading ? '' : 'on'}`} onClick={onImageClick}>
-      <Canvas ref={canvas} />
-    </Wrap>
+    <div
+      css={WrapCss(props)}
+      className={`d-flex ai-center jc-center x-hidden y-hidden ${props.className || ''} ${loading ? '' : 'on'}`}
+      onClick={onImageClick}
+    >
+      <canvas className="fill width" css={CanvasCss} ref={canvas} />
+    </div>
   ) : <></>
 }
 
