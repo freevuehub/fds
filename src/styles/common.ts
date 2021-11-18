@@ -2,7 +2,7 @@ import { css, Theme } from '@emotion/react'
 
 const diff = ['auto', 0, 1, 2, 3, 4, 5]
 const itemsRange = ['center', 'flex-start', 'flex-end']
-const contentRange = ['center', 'space-around', 'space-between']
+const contentRange = ['center', 'space-around', 'space-between', 'space-evenly']
 const directions = ['column', 'row']
 const overflow = ['hidden', 'auto', 'scroll']
 
