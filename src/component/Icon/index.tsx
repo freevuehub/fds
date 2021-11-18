@@ -6,12 +6,14 @@ export interface IProps {
   icon: any
   className?: string
   size?: number
+  color?: string
 }
 
 const IconCss = (props: IProps) => () => css`
   display: block;
   width: 100%;
-  font-size: ${props.size ? `${props.size}px` : 'auto'};
+  font-size: ${props.size ? `${props.size}px` : 'inherit'};
+  color: ${props.color || 'inherit'};
 `
 
 const Icon: React.FC<IProps> = (props) =>(
