@@ -1,20 +1,10 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import Component, { IProps } from './index';
-import { Divider } from '../'
+import Image, { IProps } from './index';
 
 export default {
   title: 'Component/UI/Image',
-  component: Component,
-  decorators: [
-    (Story) => (
-      <div style={{ width: 300 }}>
-        <h1 className="mb-5">Image</h1>
-        <Divider className="mb-5" />
-        <Story />
-      </div>
-    )
-  ],
+  component: Image,
   argTypes: {
     src: { control: 'input' }
   },
@@ -23,6 +13,4 @@ export default {
   },
 } as Meta
 
-const Template: Story<IProps>  = (args) => <Component {...args} />
-
-export const Image = Template.bind({})
+export const Default: Story<IProps> = (props) => <Image {...props} />
