@@ -5,6 +5,7 @@ const itemsRange = ['center', 'flex-start', 'flex-end']
 const contentRange = ['center', 'space-around', 'space-between', 'space-evenly']
 const directions = ['column', 'row']
 const overflow = ['hidden', 'auto', 'scroll']
+const textRange = ['center', 'left', 'right']
 
 export default (theme: Theme) => css`
   .fill {
@@ -33,6 +34,9 @@ export default (theme: Theme) => css`
     flex-wrap: wrap;
   }
   
+  ${textRange.map((item) => `
+    .text--${item} { text-align: ${item}; }
+  `)}
   ${overflow.map((item) => `
     .x-${item} { overflow-x: ${item}; }
     .y-${item} { overflow-y: ${item}; }
