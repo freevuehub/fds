@@ -14,8 +14,8 @@ export default (theme: Theme) => css`
     color: inherit;
   }
   html, body {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     font-size: 14px;
     font-family: 'nanumsquare';
     font-weight: 400;
