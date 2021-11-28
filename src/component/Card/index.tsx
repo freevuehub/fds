@@ -51,13 +51,13 @@ Card.Title = (props) => {
   const Heading: React.ReactType = props.heading || 'h4'
 
   return (
-    <Heading className="pa-2">
+    <Heading className={`pa-2 ${props.className || ''}`}>
       {props.children}
     </Heading>
   )
 }
 Card.Content = (props) => (
-  <div className="pa-2">
+  <div className={`pa-2 ${props.className || ''}`}>
     <p>{props.children}</p>
   </div>
 )
