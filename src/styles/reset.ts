@@ -32,6 +32,9 @@ export default (theme: Theme) => css`
       line-height: ${64 - ((item - 1) * 10)}px;
     }
   `)}
+  div {
+    color: ${theme.color.text};
+  }
   p {
     font-weight: 400;
     font-size: 14px;
@@ -53,5 +56,23 @@ export default (theme: Theme) => css`
     background-color: transparent;
     border: 0;
     outline: 0;
+  }
+  mark {
+    background-color: rgba(135,131,120,0.15);
+    padding: 3px 5px;
+    color: ${theme.mode === 'dark' ? theme.common.primary : '#325355'};
+    border-radius: 3px;
+  }
+  blockquote {
+    border-radius: 3px;
+    background: rgb(241, 241, 239);
+    padding: 16px 16px 16px 12px;
+    margin: 0 20px;
+    border-left: 5px solid #6bb3b8;
+    p {
+      color: #335658;
+      font-size: 16px;
+      padding: 0;
+    }
   }
 `

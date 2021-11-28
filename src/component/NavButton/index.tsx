@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import { css, Theme } from '@emotion/react'
 import { Button } from '../'
 
 export interface IProps {
   onChange?: Function
-  active?: boolean
+  active: boolean
   className?: string
 }
 
@@ -37,14 +37,21 @@ const ButtonCss = (theme: Theme) => css`
   }
 `
 const NavButton: React.FC<IProps> = (props) => {
-  const [active, setActive] = useState<boolean>(!!props.active)
+  const [active, setActive] = useState<boolean>(props.active)
 
   const onNavButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
 
     props.onChange?.(!active)
+    
     setActive(!active)
   }
+  
+  useEffect(() => {
+    if (props.active !== active) {
+      setActive(props.active)
+    }
+  }, [props.active])
 
   return (
     <Button
