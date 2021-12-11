@@ -19,7 +19,7 @@ export default (theme: Theme) => css`
   }
   .overlay {
     background-color: ${theme.color.app}70;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(25px);
   }
 
   .d-flex {

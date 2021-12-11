@@ -22,7 +22,7 @@ export const dark = {
 }
 
 export const common = {
-  primary: '#6bb3b8',
+  primary: '#71B9C1',
   white: '#ffffff',
   black: '#000000',
   grey: '#eaeaea',
