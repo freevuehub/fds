@@ -3,10 +3,11 @@ import { Style, App, Container } from '~/component'
 
 export const decorators = [
   (Story) => {
+
     return (
       <Style>
         <App>
-          <Container className="pa-5">
+          <Container>
             <Story />
           </Container>
         </App>
