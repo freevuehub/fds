@@ -1,5 +1,5 @@
 declare type TypeTheme = 'light' | 'dark';
-export declare const useThemeMode: () => [TypeTheme, Function];
+export declare const useThemeMode: () => [TypeTheme, () => void];
 export declare const useColorSet: () => {
     common: {
         primary: string;
@@ -19,12 +19,5 @@ export declare const useColorSet: () => {
         };
     };
 };
-export declare const useBreakPoint: () => {
-    notebook: number;
-    ipadPro: number;
-    ipad: number;
-    foldInner: number;
-    mobile: number;
-    foldFront: number;
-};
+export declare const useBreakPoint: () => import("..").IBreakPoint;
 export {};

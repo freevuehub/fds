@@ -1,5 +1,5 @@
 declare type TypeTheme = 'light' | 'dark';
-export declare const useThemeMode: () => [TypeTheme, Function];
+export declare const useThemeMode: () => [TypeTheme, () => void];
 export declare const useColorSet: () => {
     common: {
         primary: string;

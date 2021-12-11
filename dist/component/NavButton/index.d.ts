@@ -1,7 +1,7 @@
 import React from 'react';
 export interface IProps {
     onChange?: Function;
-    active?: boolean;
+    active: boolean;
     className?: string;
 }
 declare const NavButton: React.FC<IProps>;
