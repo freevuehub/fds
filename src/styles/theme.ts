@@ -41,6 +41,20 @@ export const breakPoint = {
   foldFront: 360
 }
 
+export const pantone = {
+  2022: ['rgb(102, 103, 171)'],
+  2021: ['rgb(147, 149, 151)', 'rgb(245, 223, 77)'],
+  2020: ['rgb(15, 76, 129)'],
+  2019: ['rgb(255, 111, 97)'],
+  2018: ['rgb(95, 75, 139)'],
+  2017: ['rgb(136, 176, 75)'],
+  2016: ['rgb(247, 202, 202)', 'rgb(147, 169, 209)'],
+  2015: ['rgb(150, 79, 76)'],
+  2014: ['rgb(173, 94, 153)'],
+  2013: ['rgb(0, 148, 115)'],
+  2012: ['rgb(221, 65, 36)'],
+}
+
 export default {
   color: {
     light,
@@ -49,4 +63,5 @@ export default {
   common,
   style,
   breakPoint,
+  pantone,
 }

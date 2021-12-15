@@ -3,7 +3,7 @@ import { ThemeProvider as EmotionThemeProvider } from '@emotion/react'
 import { theme } from '~/styles'
 import { TypeThemeMode } from '../'
 
-const initialThemeMode: TypeThemeMode = 'light'
+const initialThemeMode: TypeThemeMode = 'dark'
 
 export const ThemeContext = React.createContext<{ mode: TypeThemeMode, setMode: any }>({
   mode: initialThemeMode,
@@ -22,6 +22,7 @@ export const ThemeProvider: React.FC = (props) => {
           color: theme.color[mode],
           style: theme.style,
           breakPoint: theme.breakPoint,
+          pantone: theme.pantone,
         }}
       >
         {props.children}
