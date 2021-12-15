@@ -20,6 +20,7 @@ export const useColorSet = () => {
   return {
     common: theme.common,
     color: theme.color,
+    pantone: theme.pantone,
   }
 }
 
