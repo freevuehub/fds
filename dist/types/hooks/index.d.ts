@@ -18,6 +18,9 @@ export declare const useColorSet: () => {
             border: string;
         };
     };
+    pantone: {
+        [key: number]: string[];
+    };
 };
 export declare const useBreakPoint: () => import("..").IBreakPoint;
 export {};
