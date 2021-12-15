@@ -8,6 +8,7 @@ export interface IProps {
   onClick?: Function
   width?: number
   height?: number
+  now?: boolean
 }
 
 const WrapCss = (props: IProps) => () => css`
@@ -63,7 +64,7 @@ const LazyImage: React.FC<IProps> = (props) => {
   }
 
   useEffect(() => {
-    const io = new IntersectionObserver(() => {
+    const onLoad = () => {
       const image = new Image()
 
       image.onload = onImageLoad
@@ -71,10 +72,16 @@ const LazyImage: React.FC<IProps> = (props) => {
       if (loading) {
         image.src = props.src
       }
-    })
-
+    }
     if (canvas.current) {
-      io.observe(canvas.current)
+      if (!props.now) {
+        const io = new IntersectionObserver(onLoad)
+
+        io.observe(canvas.current)
+      } else {
+        setLoading(false)
+        onLoad()
+      }
     }
   }, [props.src])
 
