@@ -20,6 +20,9 @@ export interface IColorSet {
             border: string;
         };
     };
+    pantone: {
+        [key: number]: string[];
+    };
 }
 export interface IBreakPoint {
     notebook: number;
