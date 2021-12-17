@@ -1,5 +1,5 @@
 export const light = {
-  app: '#ffffff',
+  app: '#f4f7f8',
   content: '#ffffff',
   text: '#37352f',
   table: {
@@ -10,8 +10,8 @@ export const light = {
   },
 }
 export const dark = {
-  app: '#121212',
-  content: '#1e1e1e',
+  app: '#18191c',
+  content: '#1E2023',
   text: '#ffffff',
   table: {
   th: '#263747',
@@ -29,7 +29,7 @@ export const common = {
 }
 
 export const style = {
-  shadow: `4px 12px 30px 6px rgb(0 0 0 / 9%)`
+  shadow: `0 5px 20px 0 rgba(0, 0, 0, 0.05)`
 }
 
 export const breakPoint = {
