@@ -15,6 +15,7 @@ const WrapCss = (props: IProps) => () => css`
   position: relative;
   height: ${props.height ? `${props.height}px` : 'auto'};
   width: ${props.width ? `${props.width}px` : 'auto'};
+  border-radius: 20px;
   canvas {
     display: none;
     filter: blur(5px);
