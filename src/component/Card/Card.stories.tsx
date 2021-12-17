@@ -22,10 +22,12 @@ export const Default: Story = () => {
         Hello World
       </Card.Title>
       <Card.Content>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Aliquid assumenda, beatae consequuntur distinctio, est id
-        labore molestiae nihil nisi omnis, perferendis perspiciatis
-        quas quasi quia repudiandae similique tenetur velit veritatis!
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Aliquid assumenda, beatae consequuntur distinctio, est id
+          labore molestiae nihil nisi omnis, perferendis perspiciatis
+          quas quasi quia repudiandae similique tenetur velit veritatis!
+        </p>
       </Card.Content>
     </Card>
   )
@@ -38,10 +40,12 @@ export const Border: Story = () => {
         Hello World
       </Card.Title>
       <Card.Content>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Aliquid assumenda, beatae consequuntur distinctio, est id
-        labore molestiae nihil nisi omnis, perferendis perspiciatis
-        quas quasi quia repudiandae similique tenetur velit veritatis!
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Aliquid assumenda, beatae consequuntur distinctio, est id
+          labore molestiae nihil nisi omnis, perferendis perspiciatis
+          quas quasi quia repudiandae similique tenetur velit veritatis!
+        </p>
       </Card.Content>
     </Card>
   )
@@ -58,10 +62,12 @@ export const CoverImage: Story = () => {
         Hello World
       </Card.Title>
       <Card.Content>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Aliquid assumenda, beatae consequuntur distinctio, est id
-        labore molestiae nihil nisi omnis, perferendis perspiciatis
-        quas quasi quia repudiandae similique tenetur velit veritatis!
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Aliquid assumenda, beatae consequuntur distinctio, est id
+          labore molestiae nihil nisi omnis, perferendis perspiciatis
+          quas quasi quia repudiandae similique tenetur velit veritatis!
+        </p>
       </Card.Content>
     </Card>
   )
@@ -74,18 +80,14 @@ export const Click: Story = () => {
 
   return (
     <Card onClick={onCardClick}>
-      <Image
-        src="https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjYzOTIxfQ&w=1280"
-        height={250}
-      />
-      <Card.Title>
-        Hello World
-      </Card.Title>
       <Card.Content>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Aliquid assumenda, beatae consequuntur distinctio, est id
-        labore molestiae nihil nisi omnis, perferendis perspiciatis
-        quas quasi quia repudiandae similique tenetur velit veritatis!
+        <h1>Title</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Aliquid assumenda, beatae consequuntur distinctio, est id
+          labore molestiae nihil nisi omnis, perferendis perspiciatis
+          quas quasi quia repudiandae similique tenetur velit veritatis!
+        </p>
       </Card.Content>
     </Card>
   )
