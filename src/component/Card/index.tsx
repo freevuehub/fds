@@ -18,18 +18,24 @@ export interface ICard extends React.FC<ICardProps> {
   Content: React.FC<ICardContentProps>
 }
 
+const ClickCss = () => css`
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.04);
+  }
+`
 const BorderCss = (theme: Theme) => css`
   box-shadow: none;
   border: 1px solid ${theme.common.primary};
 `
 const WrapCss = (props: ICardProps) => (theme: Theme) => css`
-  border-radius: 15px;
-  background-color: ${theme.color.content};
+  border-radius: 20px;
   box-shadow: ${theme.style.shadow};
-  transition: background-color .3s;
+  background-color: ${theme.color.content};
+  transition: all .3s;
   
-  ${props.border && BorderCss(theme)}
-  ${props.onClick && `cursor: pointer;`}
+  ${!!props.border && BorderCss(theme)}
+  ${!!props.onClick && ClickCss()}
 `
 const Card: ICard = (props) => {
   const onClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -57,7 +63,7 @@ Card.Title = (props) => {
   )
 }
 Card.Content = (props) => (
-  <div className={`pa-2 ${props.className || ''}`}>
+  <div className={`pa-3 ${props.className || ''}`}>
     <p>{props.children}</p>
   </div>
 )
