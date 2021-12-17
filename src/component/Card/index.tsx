@@ -64,7 +64,7 @@ Card.Title = (props) => {
 }
 Card.Content = (props) => (
   <div className={`pa-3 ${props.className || ''}`}>
-    <p>{props.children}</p>
+    {props.children}
   </div>
 )
 
