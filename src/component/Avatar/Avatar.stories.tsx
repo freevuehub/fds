@@ -21,6 +21,11 @@ export const Tile: Story<IProps> = (props) => (
     <Avatar {...props} tile />
   </>
 )
+export const Circle: Story<IProps> = (props) => (
+  <>
+    <Avatar {...props} circle />
+  </>
+)
 
 export const Size: Story<IProps> = (props) => (
   <div className="d-flex ai-center jc-space-around">

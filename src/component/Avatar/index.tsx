@@ -4,14 +4,14 @@ import { Image } from '../'
 
 export interface IProps {
   tile?: boolean
-  rounded?: boolean
+  circle?: boolean
   size?: number
   className?: string
   src: string
 }
 
 const WrapCss = (props: IProps) => (theme: Theme) => css`
-  border-radius: ${props.tile ? 'unset' : props.rounded ? '15px' : '50%'};
+  border-radius: ${props.tile ? 'unset' : props.circle ? '50%' : '35%'};
   width: ${props.size || 110}px;
   height: ${props.size || 110}px;
   background-color: ${theme.common.grey};
