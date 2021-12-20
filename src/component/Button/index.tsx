@@ -10,6 +10,7 @@ interface IProps {
   dark?: boolean
   light?: boolean
   flat?: boolean
+  text?: boolean
 }
 
 const FlatCss = (props: IProps, theme: Theme) => css`
@@ -24,6 +25,10 @@ const FlatCss = (props: IProps, theme: Theme) => css`
 `
 const DarkCss = (theme: Theme) => css`
   color: ${theme.common.white};
+`
+const TextCss = () => css`
+  color: inherit;
+  background-color: transparent;
 `
 const ButtonCss = (props: IProps) => (theme: Theme) => css`
   cursor: pointer;
@@ -48,6 +53,7 @@ const ButtonCss = (props: IProps) => (theme: Theme) => css`
   
   ${props.flat && FlatCss(props, theme)}
   ${props.dark && DarkCss(theme)}
+  ${props.text && TextCss()}
 `
 const Button: React.FC<IProps> = (props) => {
   const onButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
