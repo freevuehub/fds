@@ -1,7 +1,7 @@
 import React from 'react';
 export interface IProps {
     tile?: boolean;
-    rounded?: boolean;
+    circle?: boolean;
     size?: number;
     className?: string;
     src: string;

@@ -1,7 +1,8 @@
 export * from './component';
 export * from './hooks';
 export declare type TypeThemeMode = 'light' | 'dark';
-export * from '@fortawesome/free-solid-svg-icons';
+export * as faSolid from '@fortawesome/free-solid-svg-icons';
+export * as faBrands from '@fortawesome/free-brands-svg-icons';
 export interface IColorSet {
     common: {
         primary: string;
