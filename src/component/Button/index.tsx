@@ -1,7 +1,9 @@
 import React from 'react'
 import { css, Theme } from '@emotion/react'
+import { Icon } from '../'
 
 interface IProps {
+  icon?: any
   className?: string
   onClick?: Function
   color?: string
@@ -55,7 +57,9 @@ const Button: React.FC<IProps> = (props) => {
   return (
     <button css={ButtonCss(props)} onClick={onButtonClick} className={`d-flex ${props.className || ''}`}>
       <div className="pa-2">
-        {props.children}
+        {
+          typeof props.icon === 'undefined' ? props.children : <Icon icon={props.icon} size={16} />
+        }
       </div>
     </button>
   )
