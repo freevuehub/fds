@@ -22,13 +22,15 @@ const Animation: React.FC<IProps> = (props) => {
     }
   }
 
-  useEffect(() => {
+  const usePropsActive = () => {
     setOn(props.active)
 
     if (props.active) {
       setActive(true)
     }
-  }, [props.active])
+  }
+
+  useEffect(usePropsActive, [props.active])
 
   return active ? (
     <div
