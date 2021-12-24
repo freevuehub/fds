@@ -11,7 +11,7 @@ const WrapCss = (theme: Theme) => css`
 `
 const App: React.FC<IProps> = (props) => {
   return (
-    <div css={WrapCss} className={`fill width height y-hidden ${props.className || ''}`}>
+    <div css={WrapCss} className={props.className || ''}>
       {props.children}
     </div>
   )

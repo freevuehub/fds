@@ -7,13 +7,14 @@ interface IProps {
 
 const WrapCss = (theme: Theme) => css`
   background-color: ${theme.color.content};
+  transition: background-color .3s;
 `
-const Container: React.FC<IProps> = (props) => {
+const View: React.FC<IProps> = (props) => {
   return (
-    <div css={WrapCss} className={`fill height ${props.className || ''}`}>
+    <div css={WrapCss} className={props.className || ''}>
       {props.children}
     </div>
   )
 }
 
-export default Container
+export default View
