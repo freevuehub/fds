@@ -4,7 +4,6 @@ export { default as Avatar } from './Avatar'
 export { default as Button } from './Button'
 
 export { default as Card } from './Card'
-export { default as Container } from './Container'
 export { default as Content } from './Content'
 
 export { default as Icon } from './Icon'
@@ -20,3 +19,5 @@ export { default as Switch } from './Switch'
 export { default as Animation } from './Animation'
 export { default as Divider } from './Divider'
 export { default as Style } from './Style'
+
+export { default as View } from './View'

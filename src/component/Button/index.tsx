@@ -29,6 +29,7 @@ const DarkCss = (theme: Theme) => css`
 const TextCss = () => css`
   color: inherit;
   background-color: transparent;
+  box-shadow: unset;
 `
 const ButtonCss = (props: IProps) => (theme: Theme) => css`
   cursor: pointer;

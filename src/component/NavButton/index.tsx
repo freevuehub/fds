@@ -48,6 +48,12 @@ const ButtonCss = (theme: Theme) => css`
 const NavButton: React.FC<IProps> = (props) => {
   const [active, setActive] = useState<boolean>(props.active)
 
+  const useActive = () => {
+    if (props.active !== active) {
+      setActive(props.active)
+    }
+  }
+
   const onNavButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
 
@@ -56,11 +62,7 @@ const NavButton: React.FC<IProps> = (props) => {
     setActive(!active)
   }
 
-  useEffect(() => {
-    if (props.active !== active) {
-      setActive(props.active)
-    }
-  }, [props.active])
+  useEffect(useActive, [props.active])
 
   return (
     <Button
