@@ -8,13 +8,14 @@ export interface IProps {
   size?: number
   className?: string
   src: string
+  color?: string
 }
 
 const WrapCss = (props: IProps) => (theme: Theme) => css`
   border-radius: ${props.tile ? 'unset' : props.circle ? '50%' : '35%'};
   width: ${props.size || 110}px;
   height: ${props.size || 110}px;
-  background-color: ${theme.common.grey};
+  background-color: ${props.color || theme.common.grey};
   overflow: hidden;
 `
 const Avatar: React.FC<IProps> = (props) => {

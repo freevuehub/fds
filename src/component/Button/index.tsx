@@ -11,6 +11,7 @@ interface IProps {
   light?: boolean
   flat?: boolean
   text?: boolean
+  fill?: boolean
 }
 
 const FlatCss = (props: IProps, theme: Theme) => css`
@@ -63,7 +64,7 @@ const Button: React.FC<IProps> = (props) => {
 
   return (
     <button css={ButtonCss(props)} onClick={onButtonClick} className={`d-flex ${props.className || ''}`}>
-      <div className="pa-2">
+      <div className={!!props.fill ? 'pa-0' : 'pa-2'}>
         {
           typeof props.icon === 'undefined' ? props.children : <Icon icon={props.icon} size={16} />
         }
