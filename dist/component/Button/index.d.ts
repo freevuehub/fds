@@ -8,6 +8,7 @@ interface IProps {
     light?: boolean;
     flat?: boolean;
     text?: boolean;
+    fill?: boolean;
 }
 declare const Button: React.FC<IProps>;
 export default Button;

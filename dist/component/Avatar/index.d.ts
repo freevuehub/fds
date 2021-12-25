@@ -5,6 +5,7 @@ export interface IProps {
     size?: number;
     className?: string;
     src: string;
+    color?: string;
 }
 declare const Avatar: React.FC<IProps>;
 export default Avatar;
