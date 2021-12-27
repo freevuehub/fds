@@ -1,15 +1,14 @@
 import React from 'react'
-import { Style, App, Container } from '~/component'
+import { Style, App, Content } from '~/component'
 
 export const decorators = [
   (Story) => {
-
     return (
       <Style>
         <App>
-          <Container>
+          <Content>
             <Story />
-          </Container>
+          </Content>
         </App>
       </Style>
     )
