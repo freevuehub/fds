@@ -36,7 +36,7 @@ const ButtonCss = (props: IProps) => (theme: Theme) => css`
   cursor: pointer;
   font-size: inherit;
   color: ${theme.color.text};
-  box-shadow: 0 10px 20px -10px ${theme.common.primary};
+  box-shadow: 0 10px 20px -10px ${props.color || theme.common.primary};
   border-radius: 12px;
   user-select: none;
   background-color: ${props.color || theme.common.primary};
@@ -47,10 +47,11 @@ const ButtonCss = (props: IProps) => (theme: Theme) => css`
   }
   &:hover {
     transform: translateY(-3px);
+    box-shadow: 0 8px 25px 0 ${props.color || theme.common.primary}30;
   }
   &:active {
-    transform: translateY(8px);
-    box-shadow: 0 0 0 0 ${theme.common.primary};
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px 0 ${props.color || theme.common.primary}30;
   }
   
   ${props.flat && FlatCss(props, theme)}
