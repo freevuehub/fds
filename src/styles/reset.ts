@@ -16,7 +16,7 @@ export default (theme: Theme) => css`
   html, body {
     height: 100vh;
     width: 100vw;
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'nanumsquare';
     font-weight: 400;
   }
@@ -25,20 +25,19 @@ export default (theme: Theme) => css`
     font-weight: 700;
     color: ${theme.color.text};
     transition: color .3s;
+    line-height: 1.25;
   }
-  ${[1, 2, 3, 4, 5, 6].map((item) => `
-    h${item} {
-      font-size: ${64 - (item * 10)}px;
-      line-height: ${64 - ((item - 1) * 10)}px;
-    }
-  `)}
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.1rem; }
+  h4 { font-size: 1rem; }
   div {
     color: ${theme.color.text};
   }
   p {
     font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: .85rem;
+    line-height: 1.7;
     color: ${theme.color.text};
     font-family: 'nanumsquare';
     transition: color .3s;
@@ -59,17 +58,17 @@ export default (theme: Theme) => css`
   }
   mark {
     background-color: rgba(135,131,120,0.15);
-    padding: 3px 5px;
+    padding: 0.1rem 0.3rem;
     color: ${theme.mode === 'dark' ? theme.common.primary : '#325355'};
     border-radius: 3px;
   }
   blockquote {
-    border-radius: 3px;
+    margin: 2rem 0px;
+    padding: 1rem;
     background: rgb(241, 241, 239);
-    padding: 16px 16px 16px 12px;
-    margin: 0 20px;
-    border-left: 5px solid #6bb3b8;
+    border-left: 4px solid #6bb3b8;
     p {
+      margin: 0;
       color: #335658;
       font-size: 16px;
       padding: 0;
