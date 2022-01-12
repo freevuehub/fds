@@ -1,3 +1,4 @@
+export declare const pantone: any;
 export declare const light: {
     app: string;
     content: string;
@@ -22,6 +23,7 @@ export declare const dark: {
 };
 export declare const common: {
     primary: string;
+    secondary: string;
     white: string;
     black: string;
     grey: string;
@@ -36,19 +38,6 @@ export declare const breakPoint: {
     foldInner: number;
     mobile: number;
     foldFront: number;
-};
-export declare const pantone: {
-    2022: string[];
-    2021: string[];
-    2020: string[];
-    2019: string[];
-    2018: string[];
-    2017: string[];
-    2016: string[];
-    2015: string[];
-    2014: string[];
-    2013: string[];
-    2012: string[];
 };
 declare const _default: {
     color: {
@@ -77,6 +66,7 @@ declare const _default: {
     };
     common: {
         primary: string;
+        secondary: string;
         white: string;
         black: string;
         grey: string;
@@ -92,18 +82,6 @@ declare const _default: {
         mobile: number;
         foldFront: number;
     };
-    pantone: {
-        2022: string[];
-        2021: string[];
-        2020: string[];
-        2019: string[];
-        2018: string[];
-        2017: string[];
-        2016: string[];
-        2015: string[];
-        2014: string[];
-        2013: string[];
-        2012: string[];
-    };
+    pantone: any;
 };
 export default _default;

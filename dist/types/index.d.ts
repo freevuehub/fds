@@ -6,6 +6,7 @@ export * as faBrands from '@fortawesome/free-brands-svg-icons';
 export interface IColorSet {
     common: {
         primary: string;
+        secondary: string;
         white: string;
         black: string;
         grey: string;
@@ -22,7 +23,7 @@ export interface IColorSet {
         };
     };
     pantone: {
-        [key: number]: string[];
+        [key: number | string]: string[];
     };
 }
 export interface IBreakPoint {

@@ -3,6 +3,7 @@ export declare const useThemeMode: () => [TypeTheme, () => void];
 export declare const useColorSet: () => {
     common: {
         primary: string;
+        secondary: string;
         white: string;
         black: string;
         grey: string;
@@ -19,6 +20,7 @@ export declare const useColorSet: () => {
         };
     };
     pantone: {
+        [key: string]: string[];
         [key: number]: string[];
     };
 };
